@@ -161,7 +161,7 @@ if(isset($_POST['update_form_details'])){
             $array=explode('.',$filename);
             $ext=strtolower(end($array));
             $tempname=$_FILES[$a[0]]['tmp_name'];
-            $destination='../DB_docs_images/forms/'.$_POST['user_flat_no'].'/'.$a[0].'.'.$ext;
+            $destination='../forms/'.$_POST['user_flat_no'].'/'.$a[0].'.'.$ext;
             if(file_exists($destination)){
                 unlink($destination);
             }
@@ -183,22 +183,22 @@ if(isset($_POST['update_form_details'])){
     }
     session_start();
     if($_SESSION['username']=='admin'){
-        header('Location: ../form_admin.php');
+        header('Location: ../frontend_files_php/form_admin.php');
     }
     else if($type=='resident'){
-        header('Location: ../form_user.php');
+        header('Location: ../frontend_files_php/form_user.php');
     }
     else if($type=='tenant'){
-        header('Location: ../form_tenant.php');
+        header('Location: ../frontend_files_php/form_tenant.php');
     }
     else if($type=='shop'){
-        header('Location: ../form_user.php');
+        header('Location: ../frontend_files_php/form_user.php');
     }
     else if($type=='shop_tenant'){
-        header('Location: ../form_tenant.php');
+        header('Location: ../frontend_files_php/form_tenant.php');
     }
     else{
-        header('Location: ../form_admin.php');
+        header('Location: ../frontend_files_php/form_admin.php');
     }
     
 }
@@ -326,7 +326,7 @@ if(isset($_POST['show_forms'])){
 
     if(isset($_POST['rmowner'])){
         
-        $directory = '../DB_docs_images/forms/';
+        $directory = '../forms/';
         $response=array();
         foreach (scandir($directory) as $file) {
             if ($file !== '.' && $file !== '..') {
@@ -352,7 +352,7 @@ if(isset($_POST['show_forms'])){
     
     }
     if(isset($_POST['rmtenant'])){
-        $directory = '../DB_docs_images/forms/';
+        $directory = '../forms/';
 
         foreach (scandir($directory) as $file) {
             if ($file !== '.' && $file !== '..') {
@@ -376,7 +376,7 @@ if(isset($_POST['show_forms'])){
 
     }
     if(isset($_POST['rmshop'])){
-        $directory = '../DB_docs_images/forms/';
+        $directory = '../forms/';
 
         foreach (scandir($directory) as $file) {
             if ($file !== '.' && $file !== '..') {
@@ -400,7 +400,7 @@ if(isset($_POST['show_forms'])){
 
     }
     if(isset($_POST['rmshoptenant'])){
-        $directory = '../DB_docs_images/forms/';
+        $directory = '../forms/';
 
         foreach (scandir($directory) as $file) {
             if ($file !== '.' && $file !== '..') {

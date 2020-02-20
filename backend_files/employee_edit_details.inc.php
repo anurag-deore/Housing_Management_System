@@ -28,7 +28,7 @@ if(isset($_POST['readrecord'])){
 	while ($row = mysqli_fetch_array($result)) {
 
 		 $data .= '<tr>
-			 <td><button type="button" onclick="viewdetails('.$row['emp_id'].')" class="btn
+			 <td><button type="button" onclick="viewdetails('.$row['id'].')" class="btn
             btn-block text-primary">'.$row['emp_id'].'</button></td>
 			 <td class=>'.$row['emp_name'].'</td>
 			 <td class="" >'.$row['emp_type'].'</td>
@@ -39,7 +39,7 @@ if(isset($_POST['readrecord'])){
 			 </button>
 			 <div class="dropdown-menu bg-light border-dark">
 			 <div>
-				 <button onclick="getdetails('.$row['emp_id'].')" class="btn btn-light btn-block text-dark" style="border-radius:10px;">Edit</button>
+				 <button onclick="getdetails(\''.$row['emp_id'].'\')" class="btn btn-light btn-block text-dark" style="border-radius:10px;">Edit</button>
 			 </div>
 			 <div>
 			 <button onclick="idproof(\''.$row['id_proof'].'\')" class="btn btn-light btn-block text-dark" style="border-radius:10px;">View id proof</button>
@@ -75,7 +75,7 @@ if(isset($_POST['deleteid'])){
 if(isset($_POST['id']) && isset($_POST['id']) != "")
 {
 	 $id = $_POST['id'];
-	 $query = "SELECT * FROM society_employee WHERE emp_id = '$id'";
+	 $query = "SELECT * FROM society_employee WHERE id = '$id'";
     //    $query = "SELECT * FROM flat_details WHERE id = '$user_id'";
 	 if (!$result=mysqli_query($conn,$query)) {
 			//  exit(mysqli_error());

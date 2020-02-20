@@ -16,6 +16,11 @@
         // $maitenanceperm=330;
         include '../frontend_files_php/due_date_quarter.php';
         
+        if($row['status']=='pending'){
+            $due_noti.='<h3 class="alert alert-success">Your Payment is marked pending by admin, please wait for admin\'s approval</h3>';
+            exit();
+        }
+        
         if($row['isdue']==1){
 
             if($due_date_q==4){

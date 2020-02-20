@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_NOTICE && E_WARNING);
 $conn = new mysqli('localhost', 'root', '', 'house') or die(mysqli_error($conn));
-if (isset($_POST['analysis'])) {
+// if (isset($_POST['analysis'])) {
     $months = array(4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3);
     $cars = array("0", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEPT", "OCT", "NOV", "DEC");
     $temp_array = array();
@@ -103,7 +103,7 @@ if (isset($_POST['analysis'])) {
         array_push($dbMonth_debit, $temp_debit_array);
         $temp_debit_array = array();
     }
-    // print_r($dbMonth_debit);
+    // print_r($dbMonth);
     $resp = sizeof($gers_debit);
     $data .= '<tr align="center">
 <td colspan="14" style="background-color:#eee" ><b>INCOME</b></td>
@@ -149,4 +149,4 @@ if (isset($_POST['analysis'])) {
         echo date('m');
         $dquery = mysqli_query($conn, "INSERT INTO `inexp_ledger`(`fin_year`, `income`, `expense`,`types_inc`,`types_exp`) VALUES ('2019-20','".$income."','".$expense."','".$types2."','".$types1."')");
     }
-}
+// }

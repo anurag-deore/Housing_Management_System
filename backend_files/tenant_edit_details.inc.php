@@ -97,6 +97,7 @@ if(isset($_POST['hidden_user_idupd'])){
     $agreement_holder_mobile=$_POST['agreement_holder_mobile'];
     $agreement_holder_dob=$_POST['agreement_holder_dob'];
 	$tenant_move_in_date=$_POST['tenant_move_in_date'];	
+	$update_member_count=$_POST['update_member_count'];	
 	$member1=$_POST['member1'];
 	$member2=$_POST['member2'];
 	$member3=$_POST['member3'];
@@ -109,6 +110,7 @@ if(isset($_POST['hidden_user_idupd'])){
      agreement_holder_mobile='$agreement_holder_mobile',
      agreement_holder_dob='$agreement_holder_dob',
      tenant_move_in_date='$tenant_move_in_date',
+	 tenant_count_of_members='$update_member_count',
 	 member1='$member1',
 	 member2='$member2',
 	 member3='$member3',
